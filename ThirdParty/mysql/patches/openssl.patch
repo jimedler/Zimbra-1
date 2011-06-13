@@ -1,0 +1,110 @@
+--- mysql-5.1.48/storage/archive/Makefile.in.orig	2010-07-12 12:06:26.000000000 -0700
++++ mysql-5.1.48/storage/archive/Makefile.in	2010-07-12 12:07:01.000000000 -0700
+@@ -456,6 +456,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir) @ZLIB_INCLUDES@
+ 
+ LDADD = 
+--- mysql-5.1.48/storage/blackhole/Makefile.in.orig	2010-07-12 14:28:24.000000000 -0700
++++ mysql-5.1.48/storage/blackhole/Makefile.in	2010-07-12 14:28:40.000000000 -0700
+@@ -423,6 +423,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir)
+ 
+ LDADD = 
+--- mysql-5.1.48/storage/csv/Makefile.in.orig	2010-07-12 15:12:42.000000000 -0700
++++ mysql-5.1.48/storage/csv/Makefile.in	2010-07-12 15:13:10.000000000 -0700
+@@ -424,6 +424,7 @@
+ 			-I$(top_srcdir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir)
+ 
+ LDADD = 
+--- mysql-5.1.48/storage/example/Makefile.in.orig	2010-07-12 15:14:46.000000000 -0700
++++ mysql-5.1.48/storage/example/Makefile.in	2010-07-12 15:14:57.000000000 -0700
+@@ -422,6 +422,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir)
+ 
+ LDADD = 
+--- mysql-5.1.48/storage/federated/Makefile.in.orig	2010-07-12 15:15:52.000000000 -0700
++++ mysql-5.1.48/storage/federated/Makefile.in	2010-07-12 15:16:05.000000000 -0700
+@@ -423,6 +423,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir)
+ 
+ LDADD = 
+--- mysql-5.1.48/storage/heap/Makefile.in.orig	2010-07-12 15:17:30.000000000 -0700
++++ mysql-5.1.48/storage/heap/Makefile.in	2010-07-12 15:17:39.000000000 -0700
+@@ -447,6 +447,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir)
+ 
+ LDADD = 
+--- mysql-5.1.48/storage/innobase/Makefile.in.orig	2010-07-12 15:21:38.000000000 -0700
++++ mysql-5.1.48/storage/innobase/Makefile.in	2010-07-12 15:21:49.000000000 -0700
+@@ -551,6 +551,7 @@
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/storage/innobase/include \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+ 			-I$(srcdir)
+ 
+ noinst_HEADERS = include/btr0btr.h include/btr0btr.ic		\
+--- mysql-5.1.48/storage/innodb_plugin/Makefile.in.orig	2010-07-12 15:25:08.000000000 -0700
++++ mysql-5.1.48/storage/innodb_plugin/Makefile.in	2010-07-12 15:25:18.000000000 -0700
+@@ -583,6 +583,7 @@
+ 			-I$(top_srcdir)/regex \
+ 			-I$(srcdir)/include \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+ 			-I$(srcdir) @ZLIB_INCLUDES@
+ 
+ noinst_HEADERS = \
+--- mysql-5.1.48/storage/myisam/Makefile.in.orig	2010-07-12 15:27:58.000000000 -0700
++++ mysql-5.1.48/storage/myisam/Makefile.in	2010-07-12 15:28:07.000000000 -0700
+@@ -472,6 +472,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir)
+ 
+ LDADD = 
+--- mysql-5.1.48/storage/myisammrg/Makefile.in.orig	2010-07-12 15:30:09.000000000 -0700
++++ mysql-5.1.48/storage/myisammrg/Makefile.in	2010-07-12 15:30:18.000000000 -0700
+@@ -429,6 +429,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir)
+ 
+ LDADD = 
+--- mysql-5.1.48/plugin/daemon_example/Makefile.in.orig	2010-07-12 15:32:11.000000000 -0700
++++ mysql-5.1.48/plugin/daemon_example/Makefile.in	2010-07-12 15:32:25.000000000 -0700
+@@ -425,6 +425,7 @@
+ INCLUDES = -I$(top_srcdir)/include -I$(top_builddir)/include \
+ 			-I$(top_srcdir)/regex \
+ 			-I$(top_srcdir)/sql \
++			$(openssl_includes) \
+                         -I$(srcdir) @ZLIB_INCLUDES@
+ 
+ EXTRA_LTLIBRARIES = libdaemon_example.la

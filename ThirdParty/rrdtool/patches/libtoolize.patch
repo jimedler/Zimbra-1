@@ -1,0 +1,16 @@
+--- libpng-1.2.29/autogen.sh.orig	2008-07-23 18:49:24.000000000 -0700
++++ libpng-1.2.29/autogen.sh	2008-07-23 18:50:44.000000000 -0700
+@@ -7,7 +7,12 @@
+         touch Makefile.am configure.ac
+ {
+ 	echo "running libtoolize" >&2
+-	libtoolize --force --copy --automake
++	platform=`uname -s`
++	if [ $platform = "Darwin" ]; then
++		glibtoolize --force --copy --automake
++	else
++		libtoolize --force --copy --automake
++	fi
+ } && {
+ 	echo "running aclocal" >&2
+ 	aclocal

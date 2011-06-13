@@ -1,0 +1,39 @@
+
+Build
+
+	Run "zimbra-cyrus-sasl-build.sh"
+	
+	"make install" as root
+
+Configuring the server: 
+
+	version=2.1.21.ZIMBRA
+
+	mkdir /opt/zimbra/cyrus-sasl-${version}/etc
+
+	(echo "zimbra_url: http://bolton/service/soap/";
+	echo "zimbra_cert_file: /opt/zimbra/conf/blah";
+	echo "zimbra_cert_check: off") > \
+	 /opt/zimbra/cyrus-sasl-{verison}/etc/saslauthd.conf
+
+	mkdir /opt/zimbra/cyrus-sasl-${version}/state
+
+Testing:
+
+	In one window run:
+
+	# /opt/zimbra/cyrus-sasl-2.1.21.ZIMBRA/sbin/saslauthd -a zimbra -d
+
+	In another run:
+
+	# testsaslauthd -f /opt/zimbra/cyrus-sasl-2.1.21.ZIMBRA/state/mux \
+		-u admin -p test123
+
+TODO:
+
+	make it part of the RPM
+
+	configure at install
+
+	make sure curl https: to our server works
+
