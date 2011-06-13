@@ -1,0 +1,5 @@
+<zimletConfig name="com_zimbra_gtranslator" version="3.3">
+  <global>
+    <property name="allowedDomains">*.googleapis.com,*.google.com</property>
+  </global>
+</zimletConfig>
